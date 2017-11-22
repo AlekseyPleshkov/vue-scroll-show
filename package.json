@@ -2,7 +2,7 @@
   "name": "vue-scroll-show",
   "version": "0.0.3",
   "description": "A Vue.js component that adds a class to the element if it visible on display after scrolling",
-  "main": "./src/index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "build:client": "webpack --config ./build/webpack.client.config.js --progress --hide-modules",
     "build:server": "webpack --config ./build/webpack.server.config.js --progress --hide-modules",
