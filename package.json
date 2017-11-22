@@ -1,0 +1,34 @@
+{
+  "name": "vue-scroll-show",
+  "version": "0.0.1",
+  "description": "A Vue.js component that displays if scroll to element",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "rimraf ./dist && webpack --config ./webpack.config.js"
+  },
+  "author": "Aleksey Pleshkov",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.19.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alekseypleshkov/vue-scroll-show"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "rimraf": "^2.6.2",
+    "vue": "^2.5.6",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^13.5.0",
+    "vue-style-loader": "^3.0.3",
+    "vue-template-compiler": "^2.5.6",
+    "webpack": "3.8.1",
+    "webpack-merge": "^4.1.1"
+  }
+}
