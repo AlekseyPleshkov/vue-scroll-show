@@ -1,8 +1,8 @@
 {
   "name": "vue-scroll-show",
   "version": "0.0.1",
-  "description": "A Vue.js component that displays if scroll to element",
-  "main": "./dist/index.js",
+  "description": "A Vue.js component that adds a class to the element if it visible on display after scrolling",
+  "main": "./src/index.js",
   "scripts": {
     "build": "rimraf ./dist && webpack --config ./webpack.config.js"
   },
