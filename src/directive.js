@@ -1,5 +1,5 @@
 const Directive = {
-  // Check element in display area
+  // Check item - is it in the display area
   inViewScroll (el) {
     var rect = el.getBoundingClientRect()
     return !(rect.bottom < 0 || rect.right < 0 || rect.left > window.innerWidth || rect.top > window.innerHeight)

@@ -1,6 +1,6 @@
 # Vue Scroll Show
 
-Soon..
+Show the element if the user reached it after scroll
 
 ## Installation
 
