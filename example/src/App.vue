@@ -1,7 +1,8 @@
 <template lang='pug'>
 div#app
+  h2 Scroll down
   div.empty
-  p.show__text(v-scroll-show='{color: "test"}') Change color after scroll
+  p.show__text(v-scroll-show) Change color after scroll ^_^
 </template>
 
 <script>
