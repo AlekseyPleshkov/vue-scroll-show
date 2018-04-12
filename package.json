@@ -1,6 +1,6 @@
 {
   "name": "vue-scroll-show",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A Vue.js component that adds a class to the element if it visible on display after scrolling",
   "main": "./dist/index.js",
   "scripts": {

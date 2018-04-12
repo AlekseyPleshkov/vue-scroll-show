@@ -19,3 +19,9 @@ Vue.use(VueScrollShow)
 ```html
 <element v-scroll-show></element>
 ```
+
+or
+
+```html
+<element v-scroll-show='{active: "active fadeIn"}'></element>
+```

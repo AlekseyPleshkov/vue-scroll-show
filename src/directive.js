@@ -6,10 +6,20 @@ const Directive = {
   },
 
   bind (el, binding) {
+    let options = {
+      // Add classes after show
+      active: 'active'
+    }
+
+    options = Object.assign(options, binding.value)
+
     el.classList.add('no-active')
     el.$onScroll = () => {
       if (binding.def.inViewScroll(el)) {
-        el.classList.add('active')
+        let classList = options.active.split(' ')
+        classList.forEach((val) => {
+          el.classList.add(val)
+        })
         el.classList.remove('no-active')
         binding.def.unbind(el, binding)
       }

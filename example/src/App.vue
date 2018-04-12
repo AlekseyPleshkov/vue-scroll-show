@@ -2,7 +2,7 @@
 div#app
   h2 Scroll down
   div.empty
-  p.show__text(v-scroll-show) Change color after scroll ^_^
+  p.show__text(v-scroll-show='{active: "active active2"}') Change color after scroll ^_^
 </template>
 
 <script>
