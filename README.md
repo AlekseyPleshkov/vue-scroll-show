@@ -2,8 +2,6 @@
 
 Showing the element if the user reached it after scroll
 
-[Demo]()
-
 ## Installation
 
 ```js
