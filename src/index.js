@@ -1,7 +1,7 @@
 import Directive from './directive.js'
 
-var VueScrollShow = {
-  install: (Vue, options) => {
+const VueScrollShow = {
+  install (Vue, options) {
     Vue.directive('scroll-show', Directive)
   }
 }

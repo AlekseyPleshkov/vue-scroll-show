@@ -1,6 +1,8 @@
 # Vue Scroll Show
 
-Show the element if the user reached it after scroll
+Showing the element if the user reached it after scroll
+
+[Demo]()
 
 ## Installation
 
@@ -20,8 +22,17 @@ Vue.use(VueScrollShow)
 <element v-scroll-show></element>
 ```
 
-or
+or with options
 
 ```html
-<element v-scroll-show='{active: "active fadeIn"}'></element>
+<element v-scroll-show='{active: "show fadeIn", delay: 500, selector: "#id"}'>Show one from selector</element>
+<element v-scroll-show='{active: "show fadeIn"}'>Show one from selector</element>
 ```
+
+## Directive options
+
+| Option | Description |
+| ------ | ------ |
+| active | Add classes if element in display area |
+| delay | Timeout to add classes to element |
+| selector | Id or class name element for starting add classes to directive elements |

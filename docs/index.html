@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, initial-scale=1, user-scalable=no, shrink-to-fit=no">
+  <title>Vue-Scroll-Show</title>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <script src="../dist/index.js"></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .block {
+      width: 100%;
+      min-height: 1300px;
+      text-align: center;
+    }
+
+    .footer {
+      max-width: 90%;
+      text-align: center;
+      padding: 60px 0;
+      margin: 10px auto;
+    }
+
+    .fadeIn {
+      animation: fade-in .5s ease;
+    }
+
+    .no-active {
+      opacity: 0;
+    }
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+
+      100% {
+        opacity: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+
+    <div class='block'>
+      <h3>Scroll down</h3>
+    </div>
+
+    <div class='block'>
+      <div id='event'></div>
+      <div class='footer'>
+        <span v-scroll-show='{active: "show fadeIn", delay: 500, selector: "#event"}'>Show one from selector</span>
+        <span v-scroll-show='{active: "show fadeIn", delay: 1000, selector: "#event"}'>Show two from selector</span>
+      </div>
+      <span v-scroll-show='{active: "show fadeIn"}'>Show three without selector</span>
+    </div>
+    
+  </div>
+
+  <script>
+    new Vue({
+      el: '#app',
+      data: () => ({
+        test: false
+      }),
+      methods: {
+        
+      },
+      mounted () {
+        setTimeout(() => {
+          this.test = true
+        }, 1000)
+      }
+    })
+  </script>
+</body>
+</html>

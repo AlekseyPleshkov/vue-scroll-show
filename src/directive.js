@@ -1,26 +1,39 @@
-const Directive = {
-  // Check item - is it in the display area
+export default {
+  // Check item in the display area
   inViewScroll (el) {
-    var rect = el.getBoundingClientRect()
+    const rect = el.getBoundingClientRect()
     return !(rect.bottom < 0 || rect.right < 0 || rect.left > window.innerWidth || rect.top > window.innerHeight)
   },
 
   bind (el, binding) {
+    // Default schema options
     let options = {
-      // Add classes after show
-      active: 'active'
+      active: 'active',
+      delay: 0,
+      selector: null
     }
 
+    // Assign default options and element options
     options = Object.assign(options, binding.value)
-
+    
+    // Add no-active class to element
     el.classList.add('no-active')
+
     el.$onScroll = () => {
-      if (binding.def.inViewScroll(el)) {
-        let classList = options.active.split(' ')
-        classList.forEach((val) => {
-          el.classList.add(val)
-        })
-        el.classList.remove('no-active')
+      const checkSelector = options.selector && typeof window !== 'undefined' && window.Vue
+      const targetElement = checkSelector ? document.querySelector(options.selector) : el
+
+      if (binding.def.inViewScroll(targetElement)) {
+        // Delay add class
+        setTimeout(() => {
+          const classList = options.active.split(' ')
+          classList.forEach(val => {
+            el.classList.add(val)
+          })
+          el.classList.remove('no-active')
+        }, options.delay)
+
+        // Unbinding event
         binding.def.unbind(el, binding)
       }
     }
@@ -36,5 +49,3 @@ const Directive = {
     delete el.$onScroll
   }
 }
-
-export default Directive
