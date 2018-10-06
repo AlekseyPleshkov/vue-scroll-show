@@ -14,6 +14,14 @@ import VueScrollShow from 'vue-scroll-show'
 Vue.use(VueScrollShow)
 ```
 
+#### SSR (Nuxt.js)
+
+```js
+import VueScrollShow from 'vue-scroll-show/dist/ssr.index'
+
+Vue.use(VueScrollShow)
+```
+
 ## Usage
 
 ```html
