@@ -52,10 +52,11 @@
     </div>
 
     <div class='block'>
-      <div id='event'></div>
-      <div class='footer'>
-        <span v-scroll-show='{active: "show fadeIn", delay: 500, selector: "#event"}'>Show one from selector</span>
-        <span v-scroll-show='{active: "show fadeIn", delay: 1000, selector: "#event"}'>Show two from selector</span>
+      <div id='event'>
+        <div class='footer'>
+          <span v-scroll-show='{active: "show fadeIn", delay: 500, parentId: "event"}'>Show one from selector</span>
+          <span v-scroll-show='{active: "show fadeIn", delay: 1000, parentId: "event"}'>Show two from selector</span>
+        </div>
       </div>
       <span v-scroll-show='{active: "show fadeIn"}'>Show three without selector</span>
     </div>

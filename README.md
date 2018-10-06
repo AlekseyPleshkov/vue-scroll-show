@@ -23,8 +23,11 @@ Vue.use(VueScrollShow)
 or with options
 
 ```html
-<element v-scroll-show='{active: "show fadeIn", delay: 500, selector: "#id"}'>Show one from selector</element>
-<element v-scroll-show='{active: "show fadeIn"}'>Show one from selector</element>
+<div id='event'>
+  <span v-scroll-show='{active: "show fadeIn", delay: 500, parentId: "event"}'>Show one from parentId</span>
+  <span v-scroll-show='{active: "show fadeIn", delay: 1000, parentId: "event"}'>Show two from parentId</span>
+</div>
+<span v-scroll-show='{active: "show fadeIn"}'>Show three without parentId</span>
 ```
 
 ## Directive options
@@ -33,4 +36,4 @@ or with options
 | ------ | ------ |
 | active | Add classes if element in display area |
 | delay | Timeout to add classes to element |
-| selector | Id or class name element for starting add classes to directive elements |
+| parentId | Id parent element for starting add classes to directive elements |

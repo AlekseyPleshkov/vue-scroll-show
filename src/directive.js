@@ -1,3 +1,18 @@
+const getParentById = (el, id) => {
+  let parent = el
+  while (parent) {
+    if (parent == null || parent.id == null) {
+      parent = el
+      break
+    }
+    if (parent.id === id) {
+      break
+    }
+    parent = parent.parentNode
+  }
+  return parent
+}
+
 export default {
   // Check item in the display area
   inViewScroll (el) {
@@ -10,7 +25,7 @@ export default {
     let options = {
       active: 'active',
       delay: 0,
-      selector: null
+      parentId: null
     }
 
     // Assign default options and element options
@@ -20,8 +35,7 @@ export default {
     el.classList.add('no-active')
 
     el.$onScroll = () => {
-      const checkSelector = options.selector && typeof window !== 'undefined' && window.Vue
-      const targetElement = checkSelector ? document.querySelector(options.selector) : el
+      const targetElement = options.parentId ? getParentById(el, options.parentId) : el
 
       if (binding.def.inViewScroll(targetElement)) {
         // Delay add class
