@@ -15,9 +15,9 @@ const getParentById = (el, id) => {
 
 export default {
   // Check item in the display area
-  inViewScroll (el) {
+  inViewScroll (el, options) {
     const rect = el.getBoundingClientRect()
-    return !(rect.bottom < 0 || rect.right < 0 || rect.left > window.innerWidth || rect.top > window.innerHeight)
+    return !(rect.bottom < 0 || rect.right < 0 || rect.left > window.innerWidth || rect.top > window.innerHeight - options.offset)
   },
 
   bind (el, binding) {
@@ -25,6 +25,7 @@ export default {
     let options = {
       active: 'active',
       delay: 0,
+      offset: 0,
       parentId: null
     }
 
@@ -37,7 +38,7 @@ export default {
     el.$onScroll = () => {
       const targetElement = options.parentId ? getParentById(el, options.parentId) : el
 
-      if (binding.def.inViewScroll(targetElement)) {
+      if (binding.def.inViewScroll(targetElement, options)) {
         // Delay add class
         setTimeout(() => {
           const classList = options.active.split(' ')

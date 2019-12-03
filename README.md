@@ -36,6 +36,7 @@ or with options
   <span v-scroll-show='{active: "show fadeIn", delay: 1000, parentId: "event"}'>Show two from parentId</span>
 </div>
 <span v-scroll-show='{active: "show fadeIn"}'>Show three without parentId</span>
+<span v-scroll-show='{active: "show fadeIn", offset: 500}'>Show four with offset 500</span>
 ```
 
 ## Directive options
@@ -44,4 +45,5 @@ or with options
 | ------ | ------ |
 | active | Add classes if element in display area |
 | delay | Timeout to add classes to element |
+| offset | Screen offset to add class to element |
 | parentId | Id parent element for starting add classes to directive elements |
