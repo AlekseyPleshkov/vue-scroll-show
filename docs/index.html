@@ -54,14 +54,14 @@
     <div class='block'>
       <div id='event'>
         <div class='footer'>
-          <span v-scroll-show='{active: "show fadeIn", delay: 500, parentId: "event"}'>Show one from selector</span>
-          <span v-scroll-show='{active: "show fadeIn", delay: 1000, parentId: "event"}'>Show two from selector</span>
+          <span v-scroll-show='{active: "show fadeIn", delay: 500, parentId: "event", alternate: true}'>Show one from selector</span>
+          <span v-scroll-show='{active: "show fadeIn", delay: 1000, parentId: "event", alternate: true}'>Show two from selector</span>
         </div>
       </div>
-      <span v-scroll-show='{active: "show fadeIn"}'>Show three without selector</span>
-      <span v-scroll-show='{active: "show fadeIn", offset: 500}'>Show four with offset 500</span>
+      <span v-scroll-show='{active: "show fadeIn", alternate: true}'>Show three without selector</span>
+      <span v-scroll-show='{active: "show fadeIn", offset: 500, alternate: true}'>Show four with offset 500</span>
     </div>
-    
+
   </div>
 
   <script>
@@ -71,7 +71,7 @@
         test: false
       }),
       methods: {
-        
+
       },
       mounted () {
         setTimeout(() => {
