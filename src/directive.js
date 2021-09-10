@@ -47,7 +47,7 @@ export default {
       if (binding.def.inViewScroll(targetElement, options)) {
         // Delay add class
         setTimeout(() => {
-          const classList = options.active.split(' ')
+          const classList = options.active.trim().split(' ').filter(item => item)
           classList.forEach(val => {
             el.classList.add(val)
           })
@@ -59,7 +59,7 @@ export default {
           binding.def.unbind(el, binding)
         }
       } else if (options.alternate && !el.classList.contains(options.noActive)) {
-        const classList = options.active.split(' ')
+        const classList = options.active.trim().split(' ').filter(item => item)
         classList.forEach(val => {
           el.classList.remove(val)
         })
